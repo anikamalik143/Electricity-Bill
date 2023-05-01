@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Electricity-Bill</title>
+	<style>
+		.container{
+			width:99vw;
+			height: 100vh;
+		}
+		.electric-logo img{
+            width:12vw;
+            height: 15vh;
+            margin-left: 3.5VW;
+            margin-top: 4vh;
+		}
+		.lahoreelectric-row{
+			display: flex;
+		}
+		.logo-line{
+			width: .2vw;
+			height: 22vh;
+			background-color: blue;
+			margin-left: 2vw;
+		}
+		.electric-text{
+			color: blue;
+			margin-left: 8vw;
+		}
+		.iesco-row{
+			display: flex;
+		}
+		.iesco-text1{
+			margin-left: 22vw;
+		}
+		.iesco-line{
+			width:55vw;
+			height:.2vh;
+			background-color: blue;
+		}
+		.customerid-box{
+			width: 13.5vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.customerid{
+			text-align: center;
+		}
+		.ci-row{
+			display: flex;
+		}
+		.ed-box{
+			width: 3vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.bm-box{
+			width: 9.2vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.billmonth{
+			margin-left: 0.7vw;
+		}
+		.rd-box{
+			width: 9.2vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.readingdate{
+			margin-left: 0.4vw;
+		}
+		.id-box{
+			width: 9.2vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.issuedate{
+			margin-left: 0.7vw;
+		}
+		.dd-box{
+			width: 9.2vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.duedate{
+			margin-left: 0.9vw;
+		}
+		.customerid-box1{
+			width: 13.5vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.ci-row1{
+			display: flex;
+		}
+		.ed-box1{
+			width: 3vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.bm-box1{
+			width: 9.2vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.billmonth1{
+			margin-left: 0.7vw;
+		}
+		.rd-box1{
+			width: 9.2vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.readingdate1{
+			margin-left: 0.4vw;
+		}
+		.id-box1{
+			width: 9.2vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.issuedate1{
+			margin-left: 0.7vw;
+		}
+		.dd-box1{
+			width: 9.2vw;
+			height: 3.5vh;
+			border: 2px solid blue;
+		}
+		.duedate1{
+			margin-left: 0.9vw;
+		}
+		.ref-line{
+			width: 75vw;
+			height: .2vh;
+			background-color: blue;
+			margin-left: 6vw;
+		}
+		.ref-box{
+			width: 15vw;
+			height: 3vh;
+			border: 2px solid blue;
+			margin-left: 14vw;
+		}
+		.refno{
+			color: blue;
+			margin-left: 2.5vw;
+		}
+		.ref-row{
+			display: flex;
+		}
+		.tarif-box{
+			width: 5vw;
+			height: 3vh;
+			border: 2px solid blue;
+		}
+		.tarif{
+			color: blue;
+			margin-left: 0.5vw;
+		}
+		.load-box{
+			width: 5vw;
+			height: 3vh;
+			border: 2px solid blue;
+		}
+		.load{
+			color: blue;
+			margin-left: 0.5vw;
+		}
+		.old-box{
+			width: 10vw;
+			height: 3vh;
+			border: 2px solid blue;
+		}
+		.old{
+			color: blue;
+			margin-left: 1vw;
+		}
+		.wgb-box{
+			width: 30vw;
+			height: 16vh;
+			border: 2px solid blue;
+		}
+		.wgb{
+			margin-left: 7vw;
+			margin-top: 6vh;
+		}
+		.ref-box1{
+			width: 15vw;
+			height: 7vh;
+			border: 2px solid blue;
+		}
+		.tarif-box1{
+			width: 5vw;
+			height: 7vh;
+			border: 2px solid blue;
+		}
+		.tarif1{
+			color: blue;
+			margin-left: 0.5vw;
+			margin-top: 1.5vh;
+		}
+		.load-box1{
+			width: 5vw;
+			height: 7vh;
+			border: 2px solid blue;
+		}
+		.load1{
+			color: blue;
+			margin-left: 2vw;
+			margin-top: 1.5vh;
+		}
+		.load-box2{
+			width: 8vw;
+			height: 5vh;
+			border: 2px solid blue;
+		}
+		.load2{
+			color: blue;
+			margin-top: 1.5vh;
+		}
+		.old-box1{
+			width: 10vw;
+			height: 7vh;
+			border: 2px solid blue;
+		}
+		.old-box2{
+			width: 8vw;
+			height: 5vh;
+			border: 2px solid blue;
+			margin-left: 2vw;
+		}
+		.old2{
+			color: blue;
+			margin-top: 1.5vh;
+			margin-left: 2vw;
+		}
+		.ref-text{
+			margin-top: 1vh;
+			color: blue;
+		}
+		.feeder-box{
+			width: 8vw;
+			height: 4vh;
+			border: 2px solid blue;
+			margin-left: 50.2vw;
+		}
+		.feeder{
+			color: blue;
+			margin-left: 0.5vw;
+			margin-top: 0.5vh;
+		}
+		.feeder-box1{
+			width: 8vw;
+			height: 4vh;
+			border: 2px solid blue;
+			margin-top: 1vh;
+		}
+		.subdiv{
+			color: blue;
+			margin-top: 0.5vh;
+		}
+		.feeder-box2{
+			width: 8vw;
+			height: 4vh;
+			border: 2px solid blue;
+		}
+		.div{
+			color: blue;
+			margin-top: 0.5vh;
+		}
+		.feeder-row{
+			display: flex;
+		}
+		.tariq-box{
+			width: 21.6vw;
+			height: 4vh;
+			border: 2px solid blue;
+		}
+        .tariq{
+        	margin-left: 1vw;
+        }
+        .tariq-box1{
+			width: 21.6vw;
+			height: 4.2vh;
+			border: 2px solid blue;
+			margin-top: 1vh;
+		}
+        .garden{
+        	margin-left: 1vw;
+        }
+         .tariq-box2{
+			width: 21.6vw;
+			height: 4.2vh;
+			border: 2px solid blue;
+		}
+        .gulberg{
+        	margin-left: 1vw;
+        }
+        .previous-box{
+        	width: 7vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-left:13.8vw;
+        	margin-top: 9vh;
+        }
+        .previous{
+        	color: blue;
+        	margin-left: 0.5vw;
+        	margin-top: 0.5vh;
+        }
+        .previous-row{
+        	display: flex;
+        }
+         .present-box{
+        	width: 7vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-top: 9vh;
+        }
+         .present{
+        	color: blue;
+        	margin-left: 0.5vw;
+        	margin-top: 0.5vh;
+        }
+         .mf-box{
+        	width: 5vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-top: 9vh;
+        }
+         .mf{
+        	color: blue;
+        	margin-left: 1vw;
+        	margin-top: 0.5vh;
+        }
+         .unit-box{
+        	width: 7vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-top: 9vh;
+        }
+         .unit{
+        	color: blue;
+        	margin-left:1vw;
+        	margin-top: 0.5vh;
+        }
+        .tuc-box{
+        	width: 7vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-top: 9vh;
+        }
+         .tuc{
+        	color: blue;
+        	margin-left:0.3vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+        .tce-box{
+        	width: 7vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-top: 9vh;
+        }
+         .tce{
+        	color: blue;
+        	margin-left:0.3vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+        .billadj-box{
+        	width: 7vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-top: 9vh;
+        }
+         .billadj{
+        	color: blue;
+        	margin-left:1vw;
+        	margin-top: 0.5vh;
+        }
+         .ud-box{
+        	width: 5vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-top: 9vh;
+        }
+         .ud{
+        	color: blue;
+        	margin-left:1vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+         .da-box{
+        	width: 5vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-top: 9vh;
+        }
+         .da{
+        	color: blue;
+        	margin-left:0.3vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+         .installement-box{
+        	width: 6.8vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        	margin-top: 9vh;
+        }
+         .installement{
+        	color: blue;
+        	margin-top: 0.5vh;
+        	font-size: 1.9vh;
+        	margin-left:0.3vw;
+        }
+        .previous-box1{
+        	width: 7vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        	margin-left:13.8vw;
+        }
+        .previous1{
+        	margin-left: 2vw;
+        }
+        .previous-row1{
+        	display: flex;
+        }
+         .present-box1{
+        	width: 7vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        }
+         .present1{
+        	margin-left: 2vw;
+        }
+         .mf-box1{
+        	width: 5vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        }
+         .mf1{
+        	margin-left: 2vw;
+        }
+         .unit-box1{
+        	width: 7vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        }
+         .unit1{
+        	margin-left:2vw;
+        }
+        .tuc-box1{
+        	width: 7vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        }
+         .tuc1{
+        	margin-left:2vw;
+        }
+        .tce-box1{
+        	width: 7vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        }
+         .tce1{
+        	margin-left:2vw;
+        }
+        .billadj-box1{
+        	width: 7vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        }
+         .ud-box1{
+        	width: 5vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        }
+         .da-box1{
+        	width: 5vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        }
+         .installement-box1{
+        	width: 6.8vw;
+        	height: 10vh;
+        	border: 2px solid blue;
+        }
+         .meterno-box{
+        	width: 9vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        	margin-left:13.8vw;
+        }
+        .meterno{
+        	color: blue;
+        	margin-left: 1vw;
+        	margin-top: 0.5vh;
+        }
+        .meter-row{
+        	display: flex;
+        }
+         .srvc-box{
+        	width: 5vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        }
+         .srvc{
+        	color: blue;
+        	margin-left: 1vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+         .status-box{
+        	width: 5vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        }
+         .status{
+        	color: blue;
+        	margin-left: 1vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+         .mr-box{
+        	width: 7vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        }
+         .mr{
+        	color: blue;
+        	margin-left:1vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+        .pff-box{
+        	width: 7vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        }
+         .pff{
+        	color: blue;
+        	margin-left:0.3vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+        .fpa-box{
+        	width: 7vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        }
+         .fpa{
+        	color: blue;
+        	margin-left:0.3vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+        .itw-box{
+        	width: 7vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        }
+         .itw{
+        	color: blue;
+        	margin-left:1vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+         .njs-box{
+        	width: 5vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        }
+         .njs{
+        	color: blue;
+        	margin-left:1vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+         .extax-box{
+        	width: 5vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        }
+         .extax{
+        	color: blue;
+        	margin-left:0.3vw;
+        	margin-top: 0.5vh;
+        	font-size: 1.7vh;
+        }
+         .duty-box{
+        	width: 6.8vw;
+        	height: 5vh;
+        	border: 2px solid blue;
+        }
+         .duty{
+        	color: blue;
+        	margin-top: 0.5vh;
+        	font-size: 1.9vh;
+        	margin-left:0.3vw;
+        }
+        .meterno-box1{
+        	width: 9vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        	margin-left: 13.8vw;
+        }
+        .meterno1{
+        	margin-left: 1.5vw;
+        }
+        .meter-row1{
+        	display: flex;
+        }
+         .srvc-box1{
+        	width: 5vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        }
+         .status-box1{
+        	width: 5vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        }
+         .mr-box1{
+        	width: 7vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        }
+        .pff-box1{
+        	width: 7vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        }
+         .pff1{
+        	margin-left:2vw;
+        }
+        .fpa-box1{
+        	width: 7vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        }
+         .fpa1{
+        	margin-left:1vw;
+        }
+        .itw-box1{
+        	width: 7vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        }
+         .itw1{
+        	margin-left:1vw;
+        }
+         .njs-box1{
+        	width: 5vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        }
+         .njs1{
+        	margin-left:1vw;
+        }
+         .extax-box1{
+        	width: 5vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        }
+         .extax1{
+        	margin-left:1vw;
+        }
+         .duty-box1{
+        	width: 6.8vw;
+        	height: 8vh;
+        	border: 2px solid blue;
+        }
+         .duty1{
+        	margin-left: 1vw;
+        }
+        .month-box{
+        	width:41.4vw;
+        	height: 42vh;
+        	border: 2px solid blue;
+        	margin-left: 14vw;
+        }
+        .month-row{
+        	display: flex;
+        }
+        .cb-box{
+        	width:24.5vw;
+        	height: 42vh;
+        	border: 2px solid blue;
+        }
+         .month-row1{
+        	display: flex;
+        }
+        .month-box1{
+        	width: 6vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        }
+        .month{
+        	color: blue;
+        	font-size: 1.8vh;
+        	margin-left: 1vw;
+        	margin-top: 1vh;
+        }
+         .month-linebox{
+        	width:6vw;
+        	height: 37vh;
+        	border: 1px solid blue;
+        	margin-top: 1vh;
+        }
+        .jul13{
+        	margin-top: 2vh;
+        	margin-left: 1vw;
+        }
+        .aug13{
+        	margin-left: 1vw;
+        }
+         .sep13{
+        	margin-left: 1vw;
+        }
+         .oct13{
+        	margin-left: 1vw;
+        }
+         .nov13{
+        	margin-left: 1vw;
+        }
+         .dec13{
+        	margin-left: 1vw;
+        }
+         .jan14{
+        	margin-left: 1vw;
+        }
+         .feb14{
+        	margin-left: 1vw;
+        }
+         .mar14{
+        	margin-left: 1vw;
+        }
+         .apr14{
+        	margin-left: 1vw;
+        }
+         .may14{
+        	margin-left: 1vw;
+        }
+         .jun14{
+        	margin-left: 1vw;
+        }
+         .month-box2{
+        	width: 6vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        }
+         .units{
+        	color: blue;
+        	font-size: 1.8vh;
+        	margin-left: 1vw;
+        	margin-top: 1vh;
+        }
+         .month-linebox1{
+        	width:6vw;
+        	height: 37vh;
+        	border: 1px solid blue;
+        	margin-top: 1vh;
+        }
+        .u876{
+        	margin-top: 2vh;
+        	margin-left: 3vw;
+        }
+        .u820{
+        	margin-left: 3vw;
+        }
+         .u624{
+        	margin-left: 3vw;
+        }
+         .u460{
+        	margin-left: 3vw;
+        }
+         .u105{
+        	margin-left: 3vw;
+        }
+         .u103{
+        	margin-left: 3vw;
+        }
+         .u77{
+        	margin-left: 3vw;
+        }
+         .u81{
+        	margin-left: 3vw;
+        }
+         .u99{
+        	margin-left: 3vw;
+        }
+         .u117{
+        	margin-left: 3vw;
+        }
+         .u404{
+        	margin-left: 3vw;
+        }
+         .u801{
+        	margin-left: 3vw;
+        }
+        .month-box3{
+        	width: 6vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        }
+         .bill{
+        	color: blue;
+        	font-size: 1.8vh;
+        	margin-left: 1vw;
+        	margin-top: 1vh;
+        }
+         .month-linebox2{
+        	width:6vw;
+        	height: 37vh;
+        	border: 1px solid blue;
+        	margin-top: 1vh;
+        }
+        .b11743{
+        	margin-top: 2vh;
+        	margin-left: 3vw;
+        }
+        .b9854{
+        	margin-left: 3vw;
+        }
+         .b7149{
+        	margin-left: 3vw;
+        }
+         .b4730{
+        	margin-left: 3vw;
+        }
+         .b1929{
+        	margin-left: 3vw;
+        }
+         .b762{
+        	margin-left: 3vw;
+        }
+         .b340{
+        	margin-left: 3vw;
+        }
+         .b1018{
+        	margin-left: 3vw;
+        }
+         .b662{
+        	margin-left: 3vw;
+        }
+         .b862{
+        	margin-left: 3vw;
+        }
+         .b6955{
+        	margin-left: 3vw;
+        }
+         .b15368{
+        	margin-left: 3vw;
+        }
+        .month-box4{
+        	width: 6vw;
+        	height: 4vh;
+        	border: 2px solid blue;
+        }
+         .payment{
+        	color: blue;
+        	font-size: 1.8vh;
+        	margin-left: 1vw;
+        	margin-top: 1vh;
+        }
+         .month-linebox3{
+        	width:6vw;
+        	height: 37vh;
+        	border: 1px solid blue;
+        	margin-top: 1vh;
+        }
+        .p12730{
+        	margin-top: 2vh;
+        	margin-left: 3vw;
+        }
+        .p9854{
+        	margin-left: 3vw;
+        }
+         .p7149{
+        	margin-left: 3vw;
+        }
+         .p4730{
+        	margin-left: 3vw;
+        }
+         .p1929{
+        	margin-left: 3vw;
+        }
+         .p762{
+        	margin-left: 3vw;
+        }
+         .p1018{
+        	margin-left: 3vw;
+        	margin-top: 3.7vh;
+        }
+         .p662{
+        	margin-left: 3vw;
+        }
+         .p6955{
+        	margin-left: 3vw;
+        	margin-top: 2.3vh;
+        }
+         .p15368{
+        	margin-left: 3vw;
+        }
+        .month-box5{
+        	width: 17vw;
+        	height: 30vh;
+        	border: 2px solid blue;
+        }
+         .billcal{
+        	color: blue;
+        	font-size: 1.9vh;
+        	margin-left: 1.5vw;
+        	margin-top: 1vh;
+        }
+        .bc{
+        	margin-top: 2.5vh;
+        }
+        .bc-text1{
+        	margin-top: 2vh;
+        	font-size: 2.4vh;
+        	color: red;
+        }
+        .bc-text2{
+        	margin-left: 2vw;
+        	margin-top: 1vh;
+        	color: red;
+        }
+        .cb-box{
+        	width: 25vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .cb{
+        	margin-top: 1vh;
+        	margin-left: 0.5vw;
+        	color: blue;
+        }
+        .cb-box1{
+        	width: 19vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .aa{
+        	margin-top: 1vh;
+        	margin-left: 0.5vw;
+        	color: blue;
+        }
+         .cb-box2{
+        	width: 19vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .tsg{
+        	margin-top: 1vh;
+        	margin-left: 0.5vw;
+        	color: blue;
+        }
+         .cb-box3{
+        	width: 19vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .pwdd{
+        	margin-top: 1vh;
+        	margin-left: 0.5vw;
+        	color: red;
+        }
+         .cb-box4{
+        	width: 19vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .lp{
+        	margin-top: 1vh;
+        	margin-left: 0.5vw;
+        	color: blue;
+        }
+         .cb-box5{
+        	width: 19vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .padd{
+        	margin-top: 1vh;
+        	margin-left: 0.5vw;
+        	color: red;
+        }
+        .cbno-text{
+        	margin-left: 0.5vw;
+        }
+        .cb-row{
+        	display: flex;
+        }
+         .cbno-box1{
+        	width: 7vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .cbno{
+        	margin-top: 1vh;
+        	margin-left: 2vw;
+        }
+         .cbno-box2{
+        	width: 5.5vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .cbno-box3{
+        	width: 5.5vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+         .cbno1{
+        	margin-left: 2vw;
+        }
+        .cbno-box4{
+        	width: 5.5vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .cbno2{
+        	margin-left: 2vw;
+        }
+        .cbno-box5{
+        	width: 5.5vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .cbno3{
+        	margin-left: 2vw;
+        }
+        .cbno-box6{
+        	width: 5.5vw;
+        	height: 4vh;
+        	border: 1px solid blue;
+        }
+        .cbno4{
+        	margin-left: 2vw;
+        }
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="lahoreelectric-row">
+		<div class="electric-logo">
+			<img src="C:\Users\user\Desktop/iesco-removebg-preview.png">
+		</div>
+		<div class="logo-line">
+		</div>
+		<div class="electric-text">
+			<h3>LAHORE ELECTRIC SUPPLY COMPANY.ELECTRICITY CONSUMER BILL</h3> 
+			<div class="iesco-row">
+				<div class="iesco-text">http://www.Iesco.gov.pk</div>
+				<div class="iesco-text1">G.S.T# 0305271600291</div>
+			</div>
+			<div class="iesco-line">
+			</div>
+			<div class="ci-row">
+			<div class="customerid-box">
+				<div class="customerid">CUSTOMER ID</div>
+			</div>
+			<div class="ed-box">
+				<div class="ed@">ED@</div>
+			</div>
+			<div class="bm-box">
+				<div class="billmonth">BILL MONTH</div>
+			</div>
+			<div class="rd-box">
+				<div class="readingdate">READING DATE</div>
+			</div>
+			<div class="id-box">
+				<div class="issuedate">ISSUE DATE</div>
+			</div>
+			<div class="dd-box">
+				<div class="duedate">DUE DATE</div>
+			</div>
+		    </div>
+		    <div class="ci-row1">
+			<div class="customerid-box1">
+			</div>
+			<div class="ed-box1">
+				<div class="ed@1">1.5%</div>
+			</div>
+			<div class="bm-box1">
+				<div class="billmonth1">JUL 14</div>
+			</div>
+			<div class="rd-box1">
+				<div class="readingdate1">10 JUL 14</div>
+			</div>
+			<div class="id-box1">
+				<div class="issuedate1">18 JUL 14</div>
+			</div>
+			<div class="dd-box1">
+				<div class="duedate1">25 JUL 14</div>
+			</div>
+		    </div>
+		</div>
+	</div>
+	<div class="ref-line">
+	</div>
+	<div class="ref-row">
+		<div class="ref-box">
+			<div class="refno">REFERENCE NO.</div>
+			<div class="ref-box1">
+		    </div>
+		    <div class="ref-text">NAME & ADDRESS</div>
+		</div>
+		
+		<div class="tarif-box">
+			<div class="tarif">TARIFF</div>
+			<div class="tarif-box1">
+				<div class="tarif1">A-1a(01)</div>
+		    </div>
+		</div>
+		<div class="load-box">
+			<div class="load">LOAD</div>
+			<div class="load-box1">
+				<div class="load1">2</div>
+			</div>
+			<div class="load-box2">
+				<div class="load2">CONN.DATE</div>
+			</div>
+		</div>
+		<div class="old-box">
+			<div class="old">OLD A/C NO</div>
+			<div class="old-box1">
+			</div>
+			<div class="old-box2">
+				<div class="old2">31 AUG 12</div>
+			</div>
+		</div>
+		<div class="wgb-box">
+			<div class="wgb"><h3><b>WEB GENERATED BILL</b></h3></div>
+		</div>
+	</div>
+	<div class="feeder-row">
+		<div class="feeder-box">
+			<div class="feeder">FEEDER</div>
+		<div class="feeder-box1">
+			<div class="subdiv">SUB-DIVISION</div>
+		</div>
+		<div class="feeder-box2">
+			<div class="div">DIVISION</div>
+		</div>
+		</div>
+		<div class="tariq-box">
+			<div class="tariq">TARIQ BLOCK</div>
+		<div class="tariq-box1">
+			<div class="garden">GARDEN TOWN</div>
+		</div>
+		<div class="tariq-box2">
+			<div class="gulberg">GULBERG</div>
+		</div>
+		</div>
+	</div>
+	<div class="previous-row">
+		<div class="previous-box">
+			<div class="previous">PREVIOUS</div>
+		</div>
+		<div class="present-box">
+			<div class="present">PRESENT</div>
+		</div>
+		<div class="mf-box">
+			<div class="mf">MF</div>
+		</div>
+		<div class="unit-box">
+			<div class="unit">UNITS</div>
+		</div>
+		<div class="tuc-box">
+			<div class="tuc">TOTAL UNITS CONSUMED</div>
+		</div>
+		<div class="tce-box">
+			<div class="tce">TOTAL COST OF ELECTRICITY</div>
+		</div>
+		<div class="billadj-box">
+			<div class="billadj">BILL ADJ.</div>
+		</div>
+		<div class="ud-box">
+			<div class="ud">UNPAID DEBT</div>
+		</div>
+		<div class="da-box">
+			<div class="da">DEFFERED AMOUNT</div>
+		</div>
+		<div class="installement-box">
+			<div class="installement">INSTALLMENT</div>
+		</div>
+	</div>
+	<div class="previous-row1">
+		<div class="previous-box1">
+			<div class="previous1">7658</div>
+		</div>
+		<div class="present-box1">
+			<div class="present1">8371</div>
+		</div>
+		<div class="mf-box1">
+			<div class="mf1">1</div>
+		</div>
+		<div class="unit-box1">
+			<div class="unit1">713</div>
+		</div>
+		<div class="tuc-box1">
+			<div class="tuc1">713</div>
+		</div>
+		<div class="tce-box1">
+			<div class="tce1">11343</div>
+		</div>
+		<div class="billadj-box1">
+		</div>
+		<div class="ud-box1">
+		</div>
+		<div class="da-box1">
+		</div>
+		<div class="installement-box1">
+		</div>
+	</div>
+
+	<div class="meter-row">
+		<div class="meterno-box">
+			<div class="meterno">METER NO.</div>
+		</div>
+		<div class="srvc-box">
+			<div class="srvc">SRVC RENT</div>
+		</div>
+		<div class="status-box">
+			<div class="status">STATUS</div>
+		</div>
+		<div class="mr-box">
+			<div class="mr">METER RENT</div>
+		</div>
+		<div class="pff-box">
+			<div class="pff">PTV FEE F-TAX</div>
+		</div>
+		<div class="fpa-box">
+			<div class="fpa">FUEL PRICE ADJUSTMENT </div>
+		</div>
+		<div class="itw-box">
+			<div class="itw">INCOME TAX WITH HELD</div>
+		</div>
+		<div class="njs-box">
+			<div class="njs">NJS EQ-SUR</div>
+		</div>
+		<div class="extax-box">
+			<div class="extax">G.S.T EX-TAX</div>
+		</div>
+		<div class="duty-box">
+			<div class="duty">ELECTRICITY DUTY</div>
+		</div>
+	</div>
+	<div class="meter-row1">
+		<div class="meterno-box1">
+			<div class="meterno1">S-5251917</div>
+		</div>
+		<div class="srvc-box1">
+		</div>
+		<div class="status-box1">
+		</div>
+		<div class="mr-box1">
+		</div>
+		<div class="pff-box1">
+			<div class="pff1">35</div>
+		</div>
+		<div class="fpa-box1">
+			<div class="fpa1">-393.21 </div>
+		</div>
+		<div class="itw-box1">
+		</div>
+		<div class="njs-box1">
+			<div class="njs1">71.30</div>
+		</div>
+		<div class="extax-box1">
+			<div class="extax1">1973</div>
+		</div>
+		<div class="duty-box1">
+			<div class="duty1">171.51</div>
+		</div>
+	</div>
+	<div class="month-row">
+		<div class="month-box">
+			<div class="month-row1">
+			<div class="month-box1">
+				<div class="month">MONTH</div>
+			<div class="month-linebox">
+					<div class="jul13">Jul-13</div>
+					<div class="aug13">Aug-13</div>
+					<div class="sep13">Sep-13</div>
+					<div class="oct13">Oct-13</div>
+					<div class="nov13">Nov-13</div>
+					<div class="dec13">Dec-13</div>
+					<div class="jan14">Jan-14</div>
+					<div class="feb14">Feb-14</div>
+					<div class="mar14">Mar-14</div>
+					<div class="apr14">Apr-14</div>
+					<div class="may14">May-14</div>
+					<div class="jun14">Jun-14</div>
+			</div>
+			</div>
+			<div class="month-box2">
+				<div class="units">UNITS</div>
+				<div class="month-linebox1">
+					<div class="u876">876</div>
+					<div class="u820">820</div>
+					<div class="u624">624</div>
+					<div class="u460">460</div>
+					<div class="u105">105</div>
+					<div class="u103">103</div>
+					<div class="u77">77</div>
+					<div class="u81">81</div>
+					<div class="u99">99</div>
+					<div class="u117">117</div>
+					<div class="u404">404</div>
+					<div class="u801">801</div>
+			    </div>
+			</div>
+			<div class="month-box3">
+				<div class="bill">BILL</div>
+				<div class="month-linebox2">
+					<div class="b11743">11743</div>
+					<div class="b9854">9854</div>
+					<div class="b7149">7149</div>
+					<div class="b4730">4730</div>
+					<div class="b1929">1929</div>
+					<div class="b762">762</div>
+					<div class="b340">-340</div>
+					<div class="b1018">1018</div>
+					<div class="b662">662</div>
+					<div class="b862">862</div>
+					<div class="b6955">6955</div>
+					<div class="b15368">15368</div>
+			    </div>
+			</div>
+			<div class="month-box4">
+				<div class="payment">PAYMENT</div>
+				<div class="month-linebox3">
+					<div class="p12730">12730</div>
+					<div class="p9854">9854</div>
+					<div class="p7149">7149</div>
+					<div class="p4730">4730</div>
+					<div class="p1929">1929</div>
+					<div class="p762">762</div>
+					<div class="p1018">1018</div>
+					<div class="p662">662</div>
+					<div class="p6955">6955</div>
+					<div class="p15368">15368</div>
+			    </div>
+			</div>
+			<div class="month-box5">
+				<div class="billcal">BILL CALCULATION</div>
+				<div class="bc">700x16.000</div>
+				<div class="bc1">13x18.000</div>
+				<div class="bc2">17.000x1.000</div>
+				<div class="bc3">18.000x0.000</div>
+				<div class="bc-text"><b>PAY BILL THROUGH ALFALAH
+				<br/>CREDIT CARD DIAL:111-225-111</b></div> 
+				<div class="bc-text1">
+				REPORT ELECTRICITY THEFT AT THE FOLLOWING NUMBER 
+				<br/>
+			    </div>
+			    <div class="bc-text2">
+				Toll Free # 0800-84338
+			   </div>
+			</div>
+		    </div>
+		</div>
+		<div class="cb-box">
+			<div class="cb-row">
+				<div class="cb-box">
+					<div class="cb">CURRENT BILL</div>
+				<div class="cb-box1">
+					<div class="aa">ARREARS/AGE</div>
+				</div>
+				<div class="cb-box2">
+					<div class="tsg">TARIFF SUBSIDY +GST</div>
+				</div>
+				<div class="cb-box3">
+					<div class="pwdd">PAYABLE WITHIN DUE DATE</div>
+				</div>
+				<div class="cb-box4">
+					<div class="lp">L.P SURCHARGE</div>
+				</div>
+				<div class="cb-box5">
+					<div class="padd">PAYABLE AFTER DUE DATE</div>
+				</div>
+				<div class="cbno-text">
+				<b>
+					For Electric Supply Failure Contact
+					<br/>
+					03470015913/03487653677
+					<br/>
+					For Other Complaints 0800-00-18
+					<br/>
+					SD: 03470015931
+					<br/>
+					XEN:   03470015913/03487653677
+				</b>
+				</div>
+				</div>
+
+
+				<div class="cbno-box1">
+					<div class="cbno">13292</div>
+				<div class="cbno-box2">
+				</div>
+				<div class="cbno-box3">
+					<div class="cbno1">700</div>
+				</div>
+				<div class="cbno-box4">
+					<div class="cbno2">13292</div>
+				</div>
+				<div class="cbno-box5">
+					<div class="cbno3">1151</div>
+				</div>
+				<div class="cbno-box6">
+					<div class="cbno4">14443</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
